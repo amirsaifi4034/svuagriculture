@@ -1,0 +1,1396 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SVU - Agriculture</title>
+    <link rel="shortcut icon" href="https://cmsed.svu.edu.in/images/venture-5.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Source+Sans+Pro:600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/applify.min.css" />
+    <style>
+        .vision-mission {
+            background-color: #a52420;
+        }
+        
+        .vm-wrapper img {
+            width: 50px;
+        }
+        
+        .modal .closes {
+            cursor: pointer;
+            position: absolute;
+            background-color: white;
+            border: none;
+            right: 7px;
+            top: 13px;
+            z-index: 9;
+            font-size: 1.4rem;
+        }
+        
+        @media (min-width: 992px) {
+            .navbar .nav>li>a {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        
+        #dropdownMenuLink {
+            color: #000;
+            padding-left: 12px;
+        }
+        
+        nav.navbar.navbar-fixed-top.navbar-light.bg-white.transparent #dropdownMenuLink {
+            color: #000;
+        }
+        
+        .errormsg {
+            display: none;
+            border: none;
+            background: #e01a21;
+            color: #fff;
+            font-size: 10px;
+            position: absolute;
+            margin-top: -20px;
+            z-index: 1;
+            padding: 1px 10px;
+            width: auto;
+            text-align: left;
+            font-family: open sans, sans-serif;
+        }
+        
+        #loader {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.75) url(https://cmsed.svu.edu.in/assets/img/WearyColorfulCormorant-size_restricted.gif) no-repeat center center;
+            z-index: 10000;
+        }
+        
+        .topheader-btn {
+            background: #000;
+            padding: 10px 20px;
+            width: 100%;
+            text-align: right;
+            font-size: 20px;
+            height: 60px;
+        }
+        
+        .topheader-btn a {
+            color: #fff;
+            font-size: 14px;
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 5px;
+            margin: 0 5px;
+            transition: all .3s ease-in-out;
+        }
+        
+        a.AdminL {
+            border: 1px solid;
+            padding: 4px 12px;
+        }
+        
+        a.AdminL:hover {
+            box-shadow: 0px 5px 7px #88888859;
+            border: 1px solid #333;
+            padding: 5px 12px;
+            transform: scale(1.1);
+        }
+        
+        a.studentL {
+            background: #a32420;
+        }
+        
+        a.studentL:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 3px 4px #b3afafa6;
+        }
+    </style>
+</head>
+
+
+<body class="ui-transparent-nav" data-fade_in="on-load" onload="loginstudent()">
+
+    <!-- Navbar Fixed + Default -->
+    <nav class="navbar navbar-fixed-top navbar-light bg-white">
+        <div class="container">
+            <a class="ui-variable-logo navbar-brand" href="index.php" title="">
+                <img class="logo-default" src="images/logo.png" alt="SVU Logo">
+                <img class="logo-transparent" src="images/logo.png" alt="SVU Logo">
+            </a>
+            <div class="ui-navigation navbar-right">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#" data-scrollto="about">About</a>
+                    </li>
+                    <li><a href="#" data-scrollto="aa">Approvals</a></li>
+                    <li>
+                        <a href="#" data-scrollto="ov">Object & Vision</a>
+                    </li>
+                    <li>
+                        <a href="#" data-scrollto="soc">Scope</a>
+                    </li>
+                    <li>
+                        <a href="#" data-scrollto="Curriculum">Curriculum</a>
+                    </li>
+                    <li>
+                        <a href="#" data-scrollto="syllabus">Syllabus</a>
+                    </li>
+                    <li>
+                        <a href="#" data-scrollto="fee">Fee</a>
+                    </li>
+                    <li>
+                        <div class="dropdown show">
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="tel:+91-9540939696"><img src="images/call-icon.png" style="width:15px;margin-right: 3px;"> 9540939696</a>
+                                <a class="dropdown-item" href="#"><img src="images/email.png" style="width:15px;margin-right: 3px;"> Email</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <a href="#" class="ui-mobile-nav-toggle pull-right"></a>
+        </div>
+    </nav>
+    <div class="main" role="main">
+        <div class="ui-hero hero-lg ui-tilt ui-gradient-blue" id="fff">
+            <div class="container pt-4">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6" data-vertical_center="true" data-vertical_offset="16">
+                        <img src="images/04.jpg" class="w-100" style="height:100%;">
+                    </div>
+                    <style>
+                        .errormsg {
+                            display: none;
+                            border: none;
+                            background: #e01a21;
+                            color: #fff;
+                            font-size: 10px;
+                            position: absolute;
+                            margin-top: -15px;
+                            z-index: 1;
+                            padding: 1px 10px;
+                            width: auto;
+                            text-align: left;
+                            font-family: open sans, sans-serif;
+                        }
+                    </style>
+                    <div class="col-sm-12 col-md-6 animate" data-show="fade-in-left" data-delay="400" style=" height:34rem; box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); background-color:white; border-radius:0.5rem;">
+                        <div id="loader"></div>
+                        <div class="from-sec">
+                            <h2 class="text-dark-gray text-center mt-2">Enquiry Form </h2>
+                            <p class='text-danger' id="emailMsg" style="color: #a52420;text-align: center;font-size: 15px;"></p>
+                            <p class='text-danger' id="apiemailMsg" style="color: #a52420;text-align: center;font-size: 15px;"></p>
+                            <form id="contact" method="POST" action="">
+                                <input type="hidden" name="errormsgforvalidation" id="errormsgforvalidation">
+                                <input type="hidden" name="errormsgforvalidationemail" id="errormsgforvalidationemail">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Full Name<span style="color:#a52420;">*</span></label>
+                                    <input type="text" id="name" name="name" autocomplete="nope" pattern="[a-zA-Z0-9 ]+" minlength="3" class="form-control" placeholder="Enter Name" style="text-transform: capitalize;" onclick="getallstate()" required>
+                                </div>
+                                <div id="name_errorloc" class="errormsg">Please enter your Name</div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Contact Number<span style="color:#a52420;">*</span></label>
+                                    <input type="tel" class="form-control" autocomplete="nope" name="phone" pattern="[0-9]+" onkeyup="Callajaxphone(this.value)" id="phone" maxlength="10" minlength="10" placeholder="Enter Your Number" required>
+                                    <span id="rfvMobileNo" style="display: none;">Please input numeric characters only</span>
+                                    <span id="rfvMobileNo1" style="display: none;">Please enter 10 digit mobile number</span>
+                                </div>
+                                <div id="phone_errorloc" class="errormsg">Please enter your Phone Number</div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email<span style="color:#a52420;">*</span></label>
+                                    <input type="email" name="email" autocomplete="nope" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" onblur="Callajax(this.value)" id="email" class="form-control" placeholder="Enter Your Email" required />
+                                    <span id="rfvEmailId" style="display: none;">Enter Email Id</span>
+                                    <span id="rfvEmailId1" style="display: none;">Email Id is not valid</span>
+                                </div>
+                                <div id="email_errorloc" class="errormsg">Please enter your valid Email</div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">State<span style="color:#a52420;">*</span></label>
+                                    <select id="state" name="state" data-alias="" class="form-control" required>
+                                        <option value="">Select State</option>               
+                                    </select>
+                                </div>
+                                <div id="state_errorloc" class="errormsg">Please enter your State</div>
+                                <div class="form-group">
+                                    <label for="exampleapplyCoupon">District<span style="color:#a52420;">*</span></label>
+                                    <select id="district" name="district" class="form-control" required>
+                                        <option value="">Select District</option>
+                                    </select>
+                                </div>
+                                <div id="District_errorloc" class="errormsg">Please enter your District</div>
+                                <div class="text-center">
+                                    <input type="hidden" name="coursecode" id="coursecodes" value="">
+                                    <input type="hidden" name="subcoursecode" id="subcoursecodes" value="">
+                                    <input type="hidden" name="coursecodekey" id="coursecodeskey" value="">
+                                    <input type="hidden" name="subcoursecodekey" id="subcoursecodeskey" value="">
+                                    <button type="submit" name="submit" disabled id="checkdata" value="reg" class="btn btn-primary form-btn" style="background:#a52420;border-radius: 0.5rem;">Submit</button>
+                                    <a href="#" data-toggle="modal" data-target="#loginmodal" class="btn btn-primary form-button" style="background:#a52420;border-radius: 0.5rem;">Sign In</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- login modal -->
+        <div id="loginmodal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="closes" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Sign In</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email or SVU Id <span style="color:#a52420;">*</span></label>
+                                <input type="text" name="svuid" id="email" class="form-control" placeholder="Enter Email or SVU Id" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Mobile No<span style="color:#a52420;">*</span></label>
+                                <input type="tel" name="passworddob" class="form-control" placeholder="Enter Mobile No" required><br>
+                                <div class="text-center">
+                                    <button type="submit" name="checkstudentdata" class="btn btn-primary" style="background:#a52420;border-radius: 0.5rem;">Login</button>
+                                </div><br>
+                                <div class="text-center"><u><a href="#" data-toggle="modal" data-target="#Forgetmodal" style="color: #a52420; text-decoration: none; ">Forgot Password</a></u></div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- login modal -->
+        <div id="Forgetmodal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="closes" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Forget Password</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email Id<span style="color:#a52420;">*</span></label>
+                                <input type="text" name="password" class="form-control" placeholder="Enter Email Id" required><br>
+                                <div class="text-center">
+                                    <input type="submit" name="forgetpassword" value="Submit" class="btn btn-primary form-btn" value="Send" style="background:#a52420;border-radius: 0.5rem;">
+                                </div>
+                                <form>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section bg-light ui-showcase-section" id="about">
+            <div class="container">
+                <div class="section-heading center">
+                    <h2 class="heading red-text">
+                        ABOUT THE UNIVERSITY
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12" data-vertical_center="true">
+                        <p class="paragraph">Shri Venkateshwara University is a State Private University promulgated by the Govt. of U ar Pradesh Act. No. 26 of 2010, passed by U ar Pradesh legislature. The university is recognized by the UGC u/s 2(f) of the UGC Act 1956,
+                            and University awards degrees u/s 22(1) of the UGC Act. The University has mandate to impart and promote the study of Science, Engineering, and Technology, Bio and Medical Sciences, Pharmacy, Nursing, Management, Agriculture,
+                            Law and other professional and tradi onal academic programs. </p>
+                        <p>Shri Venkateshwara University is promoted by Shri Bankey Bihari Educa onal Trust (SBBET). It is controlled by a Board of Management, which is headed by the Chairman Shri Sudhir Giri, a great visionary, educa onist, experienced
+                            professionals and technocrats has established a chain of ins tutes of higher educa on and learning.
+                        </p>
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 20px;">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <ul class="ui-icon-blocks ui-blocks-v icons-lg">
+                            <li class="ui-icon-block">
+                                <span class="icon icon-layers"></span>
+                                <h5>State Private University</h5>
+                                <p>State Private University enacted by Act No-26 of 2010 of State Legislature of Govt. of Uttar Pradesh and notified u/s 2(f), UGC Act 1956 of University Grants Commission, Govt. of India</p>
+                            </li>
+                            <li class="ui-icon-block">
+                                <span class="icon icon-layers"></span>
+                                <h5>Degrees</h5>
+                                <p>Degrees are awards u/s22(1) of UGC Act 1956</p>
+                            </li>
+                            <li class="ui-icon-block">
+                                <span class="icon icon-layers"></span>
+                                <h5>Location</h5>
+                                <p>The university is located at Gajraula, Dist. Amroha, Uttar Pradesh to promote excellence in higher education and giving equal access to value education to the rural population for a vibrant and inclusive society through
+                                    knowledge creation and dissemination.
+                                </p>
+                            </li>
+                            <li class="ui-icon-block">
+                                <span class="icon icon-layers"></span>
+                                <h5>Excellence</h5>
+                                <p>The University is delivering social, economic and intellectual values par excellence.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <ul class="ui-icon-blocks ui-blocks-v icons-lg">
+                            <li class="ui-icon-block">
+                                <span class="icon icon-layers"></span>
+                                <h5>Clean Design</h5>
+                                <p>
+                                    The university campus sprawling over 60 acres is lush green, serene, pollution free and calm which provides an awesome ambience for the dedicated and committed academic and research communities.
+                                </p>
+                            </li>
+                            <li class="ui-icon-block">
+                                <span class="icon icon-layers"></span>
+                                <h5>World class education</h5>
+                                <p>The university campus provides world class quality educa on in tune with the technological advancements taking place in various facets of Medical, Engineering, Science, Technology, Agriculture etc.</p>
+                            </li>
+                            <li class="ui-icon-block">
+                                <span class="icon icon-layers"></span>
+                                <h5>Goal</h5>
+                                <p>An emerging University dedicated for carving out students with inspiring insights towards success and thus becoming an important des na on for higher learning.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="vision-mission py-5">
+            <div class="container">
+                <h2 class="heading text-white text-left mb-3 text-uppercase">Vision and Mission</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="vm-wrapper">
+                            <img src="images/vision.png">
+                            <h2 class="text-white heading mt-2">Vision</h2>
+                            <p class="text-white font-normal">To be a global center of academic excellence with state-of-art facili es and best educa onal resources for impar ng innova ve knowledge and learning environment.</p>
+                            <p class="text-white font-normal">To be a accredited center of high standard research by iden fying and nurturing talents for knowledge genera on and balancing personal and professional excellence.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="vm-wrapper">
+                            <img src="images/target.png">
+                            <h2 class="text-white heading mt-2">Mission</h2>
+                            <p class="text-white font-normal">Knowledge dissemina on for achievements in the interna onal Arena, Facilita ng the Integra on of mul disciplinary approaches for enrichment and quality enhancement.</p>
+                            <p class="text-white font-normal">Development of professionalism among students for a Global vision and managerial leadership.</p>
+                            <p class="text-white font-normal">To carry forward the mission of genera ng quality manpower resources for addressing the emerging demands of our country.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="section" id="aa">
+            <div class="container ui-icon-blocks ui-blocks-h icons-md">
+                <div class="section-heading center">
+                    <h2 class="heading red-text">
+                        APPROVALS AND ACCREDITATIONS
+                    </h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-4 col-6 ui-icon-block">
+                        <img src="images/Seal_of_Uttar_Pradesh.png" class="img-fluid img-100">
+                        <h5 class="padding-10">Govt of UP</h5>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6 ui-icon-block">
+                        <img src="images/UGC_India_Logo.png" class="img-fluid img-100">
+                        <h5 class="padding-10">UGC</h5>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6 ui-icon-block">
+                        <img src="images/Association_of_Indian_Universities_Logo.png" class="img-fluid img-100">
+                        <h5 class="padding-10">AIU</h5>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6 ui-icon-block">
+                        <img src="images/Indian_Nursing_Council_Logo.png" class="img-fluid img-100">
+                        <h5 class="padding-10">INC</h5>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6 ui-icon-block">
+                        <img src="images/PCI.png" class="img-fluid img-100">
+                        <h5 class="padding-10">PCI</h5>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6 ui-icon-block">
+                        <img src="images/Logo_of_Bar_Council_of_India.png" class="img-fluid img-100">
+                        <h5 class="padding-10">BCI</h5>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6 ui-icon-block">
+                        <img src="images/NCERT.png" class="img-fluid img-100">
+                        <h5 class="padding-10">NCERT</h5>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-6 ui-icon-block">
+                        <img src="images/mci.png" class="img-fluid img-100">
+                        <h5 class="padding-10">MCI</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="ov" class="section ui-gradient-peach">
+            <div class="container">
+                <div class="section-heading center">
+                    <h2 class="heading">OBJECT & VISION</h2>
+                </div>
+                <div class="row ui-tabbed-showcase">
+                    <div class="col-lg-6 col-md-5 animate" data-show="fade-in-right">
+                        <div class="device-slider owl-carousel owl-theme">
+                            <div class="item height-320 active">
+                                <img src="images/05.jpg" height="100%" style="width:100%; object-fit: cover;">
+                            </div>
+                            <div class="item height-320">
+                                <img src="images/06.jpg" height="100%" style="width:100%; object-fit: cover;">
+                            </div>
+                            <div class="item height-320">
+                                <img src="images/07.jpg" height="100%" style="width:100%; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-7" data-vertical_center="true">
+                        <div class="ui-tabs">
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade show active" id="home">
+                                    <ul class="ui-checklist">
+                                        <li>
+                                            <h6 class="heading">Orientation of Students on location-specific crop production technologies of broad- based agriculture with reference to field problems.</h6>
+                                        </li>
+                                        <li>
+                                            <h6 class="heading">Building the capacity of Students for efficient handling of agricultural Inputs.</h6>
+                                        </li>
+                                        <li>
+                                            <h6 class="heading">To enhance knowledge about the laws governing regulation of agricultural Inputs.</h6>
+                                        </li>
+                                        <li>
+                                            <h6 class="heading">To Make Students an effective source of farm information person at the village level.</h6>
+                                        </li>
+                                    </ul>
+                                    <h4 class="text-white">Mission</h4>
+                                    <p>To transform Students into para-extension professionals thereby strengthening the agricultural extension system so as to enable themselves to serve the farmers better.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="soc">
+            <div class="container">
+                <div class="section-heading center">
+                    <h2 class="heading red-text">TRANSFORMATION OF INPUT DEALERS INTO PARA AGRICULTURE EXTENSION PROFESSIONALS</h2>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-6 pb-5">
+                        <img src="images/scope.png">
+                        <p class="mb-0 text-center padding-10">
+                            In India, there are about 3.4 lakh practicing agri-input dealers, who are the prime source of farm information to the farmers. The contact point for majority of farmers is the agri-input dealers. While purchasing different inputs required for farming
+                            operations, the farmer naturally tires to find out from the input dealer about the usage of inputs, both in terms of quality and quantity.
+                        </p>
+                    </div>
+                    <div class="col-md-6 pb-5">
+                        <img src="images/scope.png">
+                        <p class="mb-0 text-center padding-10">
+                            However, most of these input dealers do not have formal agricultural education. If these input dealers can be shaped as para-extension professionals by providing requisite knowledge, they can professionalise extension services and contribute to bring
+                            a paradigm shift in Indian Agriculture. So that Government of India issued a Gazette Notification on 1st February, 2017, wide Gazette No- 83/GSR1O6(E). </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style type="text/css">
+            tr {
+                border: 1px solid #086AD8;
+            }
+            
+            .table-bordered>tbody>tr>td,
+            .table-bordered>tfoot>tr>td {
+                border: 1px solid #ffffff52;
+                background: #f15f4d;
+                color: #fff;
+            }
+            
+            .table-bordered>thead>tr>th {
+                border: 1px solid #ffffff52;
+            }
+            
+            .strongtext {
+                color: #000;
+                font-size: 17px;
+            }
+            
+            .table_inbox {
+                display: none;
+            }
+            
+            @media (max-width: 768px) {
+                .nav-pills .nav-link {
+                    border: 1px solid;
+                    margin: 10px 2px;
+                    width: 110px;
+                    color: #a5a5a5;
+                }
+                .nav-pills .nav-link.active,
+                .nav-pills .show>.nav-link {
+                    background-color: #a21510;
+                }
+                .table_intable {
+                    display: none;
+                }
+                .table_inbox {
+                    display: block;
+                }
+            }
+            
+            .course_d h3,
+            .competencies h3 {
+                color: #fff;
+            }
+        </style>
+        <section class="text_strip" style="background: #a21510;">
+            <div class="container">
+                <h5 class="m-0 text-white py-3 text-center">
+                    <b>10th pass, Preference will be given to input dealers.</b>
+                </h5>
+            </div>
+        </section>
+        <div class="section bg-light" id="Curriculum">
+            <div class="container">
+                <div class="section-heading center">
+                    <h2 class="heading red-text">CURRICULUM</h2>
+                </div>
+                <div class="row text-center ui-tabbed-showcase">
+                    <div class="col-md-12 pb-5 ui-tabs">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="nav-item">
+                                <a class="nav-link active" href="#sem-1" role="tab" data-toggle="tab" data-toggle_screen="1">
+                                    <span class="icon icon-calendar"></span> Semester-1
+                                </a>
+                            </li>
+                            <li role="presentation" class="nav-item">
+                                <a class="nav-link" href="#sem-2" role="tab" data-toggle="tab" data-toggle_screen="2">
+                                    <span class="icon icon-calendar"></span> Semester-2
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade active show" id="sem-1">
+                                <table class="table table-bordered table_intable" cellpadding="12" style="border: 1px solid #ffffff52;margin: auto;">
+                                    <thead>
+                                        <tr style="background: #a21510; color: #fff;">
+                                            <th class="first-box">Course Name</th>
+                                            <th class="sec-row">Code No.</th>
+                                            <th class="third-row">Maximum Mark</th>
+                                            <th class="third-row">Minimum Passing Marks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Soil Health Management &amp; Agro ecological situations</td>
+                                            <td>DAS-011</td>
+                                            <td>100</td>
+                                            <td>40</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Seed &amp; Seed Production</td>
+                                            <td>DAS-012</td>
+                                            <td>100</td>
+                                            <td>40</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rainfed Farming &amp; Irrigation Techniques</td>
+                                            <td>DAS-013</td>
+                                            <td>100</td>
+                                            <td>40</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Practical &amp; Viva</td>
+                                            <td>DAS-014</td>
+                                            <td>100</td>
+                                            <td>40</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>Total</td>
+                                            <td>400</td>
+                                            <td>160</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">A student is required to obtain min. 40% marks in individual paper to pass.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="sem-2">
+                                <table class="table table-bordered table_intable" cellpadding="12" style="border: 1px solid #ffffff52; margin: auto;">
+                                    <thead>
+                                        <tr style="background: #a21510; color: #fff;">
+                                            <th class="first-box">Course Name</th>
+                                            <th class="sec-row">Code No.</th>
+                                            <th class="third-row">Maximum Mark</th>
+                                            <th class="third-row">Minimum Passing Marks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Extension approaches and methods</td>
+                                            <td>DAS-021</td>
+                                            <td>100</td>
+                                            <td>40</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Plant Protection &amp; Pesticides Management</td>
+                                            <td>DAS-022</td>
+                                            <td>100</td>
+                                            <td>40</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Acts, Rules and Regulations in Pesticides and Fertilizers</td>
+                                            <td>DAS-023</td>
+                                            <td>100</td>
+                                            <td>40</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Practical &amp; Viva</td>
+                                            <td>DAS-024</td>
+                                            <td>100</td>
+                                            <td>40</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>Total</td>
+                                            <td>400</td>
+                                            <td>160</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4">A student is required to obtain min. 40% marks in individual paper to pass.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container pt-5">
+        <h2 class="heading red-text text-center mb-5 text-uppercase">Course of the study</h2>
+        <div class="row text-center">
+            <div class="col-md-6 pb-5">
+                <img src="images/innovation.png">
+                <h5 class="text-dark-gray">THEORETICAL KNOWLEDGE:</h5>
+                <p class="mb-0">
+                    Lecture, demonstration, group discussion. Guest lecturer, assignments, case studies, seminars & presentation.
+                </p>
+            </div>
+            <div class="col-md-6 pb-5">
+                <img src="images/practice.png">
+                <h5 class="text-dark-gray">PRACTICAL SKILLS:</h5>
+                <p class="mb-0">
+                    Health camps, hospital & rural health centre postings, project works.
+                </p>
+            </div>
+        </div>
+    </div> -->
+    <div id="syllabus" class="section">
+        <div class="container">
+            <div class="section-heading center">
+                <h2 class="heading">
+                    SYLLABUS FOR DIPLOMA AGRICULTURE
+                </h2>
+            </div>
+            <div class="row ui-tabbed-showcase">
+                <div class="col-lg-12 col-md-12" data-vertical_center="true">
+                    <div class="ui-tabs">
+                        <center>
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="nav-item">
+                                    <a class="nav-link active" href="#semester-1" role="tab" data-toggle="tab" data-toggle_screen="1" data-toggle_slider="device-slider-2">
+                                        <span class="icon icon-calendar"></span> Semester-1
+                                    </a>
+                                </li>
+                                <li role="presentation" class="nav-item">
+                                    <a class="nav-link" href="#semester-2" role="tab" data-toggle="tab" data-toggle_screen="2" data-toggle_slider="device-slider-2">
+                                        <span class="icon icon-calendar"></span> Semester-2
+                                    </a>
+                                </li>
+                            </ul>
+                        </center>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade show active" id="semester-1">
+                                <div class="ui-accordion-panel">
+                                    <div class="ui-card shadow-md ui-accordion">
+                                        <h6 class="toggle" data-toggle="accordion-one" data-toggle_screen="1" data-toggle_slider="device-slider-1">
+                                            <span class="icon icon-arrow-right"></span> Soil Health Management (DA-011)
+                                        </h6>
+                                        <div class="body" data-accord="accordion-one">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <ul>
+                                                        <li>Soil-Profile, Types, Characteristics, Properties (Physical, Chemical and Biological</li>
+                                                        <li>Importance of soil testing, method of soil sampling, interpretation & farm advisory, based on soil test results.</li>
+                                                        <li>Problematic soils and their management.</li>
+                                                        <li>Macro-Micro Nutrient deficiencies and their symptoms</li>
+                                                        <li>Integrated Nutrients Management</li>
+                                                        <li>Liquid Fertilizers</li>
+                                                        <li>Plant Growth Regulators</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui-card shadow-md ui-accordion">
+                                        <h6 class="toggle" data-toggle="accordion-two" data-toggle_screen="2" data-toggle_slider="device-slider-1">
+                                            <span class="icon icon-arrow-right"></span> Seed &amp; Seed production (DA-012)
+                                        </h6>
+                                        <div class="body" data-accord="accordion-two">
+                                            <div class="col-md-8">
+                                                <li>Difference between seeds and grains</li>
+                                                <li>Importance of Quality Seeds in crop production</li>
+                                                <li>Seed treatment-Important and procedure</li>
+                                                <li>Types of seeds</li>
+                                                <li>Agencies involved in seed production</li>
+                                                <li>Seed production methodology</li>
+                                                <li>Selection of seed</li>
+                                                <li>Seed testing</li>
+                                                <li>Seed enhancement</li>
+                                                <li>Seed certification</li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui-card shadow-md ui-accordion">
+                                        <h6 class="toggle" data-toggle="accordion-three" data-toggle_screen="3" data-toggle_slider="device-slider-1">
+                                            <span class="icon icon-arrow-right"></span> Rainfed Farming (DA-013)
+                                        </h6>
+                                        <div class="body" data-accord="accordion-three">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <li>Crop planning in Rainfed Areas</li>
+                                                    <li>Importance of Water Management in Crop Production</li>
+                                                    <li>Natural Resource Management for Dry land Agriculture</li>
+                                                    <li>Climate Change and adaptation strategies for Rainfed agriculture</li>
+                                                    <li>Basic Principles in irrigation</li>
+                                                    <li>Water use Efficiency System and Methods of Irrigation</li>
+                                                    <li>Systems Installation and Management of Micro irrigation (Sprinkler &amp; Drip Irrigation)</li>
+                                                    <li>Budget requirement for Installation of Micro Irrigation System</li>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui-card shadow-md ui-accordion">
+                                        <h6 class="toggle" data-toggle="accordion-four" data-toggle_screen="4" data-toggle_slider="device-slider-1">
+                                            <span class="icon icon-arrow-right"></span> Practical & Viva (DA-014)
+                                        </h6>
+                                        <div class="body" data-accord="accordion-four">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="semester-2">
+                                <div class="ui-accordion-panel">
+                                    <div class="ui-card shadow-md ui-accordion active">
+                                        <h6 class="toggle" data-toggle="accordion-one" data-toggle_screen="1" data-toggle_slider="device-slider-1">
+                                            <span class="icon icon-arrow-right"></span> Extension approaches and methods (DA-021)
+                                        </h6>
+                                        <div class="body show" data-accord="accordion-one">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <li>Fundamentals of agriculture education extension</li>
+                                                    <li>Agricultural Extension Systems- Issues and Approaches</li>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui-card shadow-md ui-accordion">
+                                        <h6 class="toggle" data-toggle="accordion-two" data-toggle_screen="2" data-toggle_slider="device-slider-1">
+                                            <span class="icon icon-arrow-right"></span> Plant Protection &amp; Pesticides Management (DA-22)
+                                        </h6>
+                                        <div class="body" data-accord="accordion-two">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <li>Classification of Pesticides.</li>
+                                                    <li>New Generation Pesticides.</li>
+                                                    <li>Compatibility of Agro Chemical.</li>
+                                                    <li>Storage pests and their Management.</li>
+                                                    <li>Harmful effect of indiscriminate use of agriculture inputs.</li>
+                                                    <li>Integrated Pest Management.</li>
+                                                    <li>Residual Analysis.</li>
+                                                    <li>Precautionary Measures in procurement, handling and application of Chemicals and other agriculture inputs.</li>
+                                                    <li>First Aid.</li>
+                                                    <li>Importance of Pest and Disease Control in Agriculture.</li>
+                                                    <li>Insect and Disease</li>
+                                                    <li>Difference between Harmful and Beneficial insects.</li>
+                                                    <li>Difference between Nutrition deficiency and Disease Symptoms.</li>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui-card shadow-md ui-accordion">
+                                        <h6 class="toggle" data-toggle="accordion-three" data-toggle_screen="3" data-toggle_slider="device-slider-1">
+                                            <span class="icon icon-arrow-right"></span> Acts, Rules and Regulations in Pesticides and Fertilizers (DA-23)
+                                        </h6>
+                                        <div class="body" data-accord="accordion-three">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <li>Seed Act</li>
+                                                    <li>Insecticide Act</li>
+                                                    <li>Fertilizer Control Order</li>
+                                                    <li>Essential Commodity Act</li>
+                                                    <li>Consumer Protection Act, Food Adulteration Act</li>
+                                                    <li>APMC Act</li>
+                                                    <li>Sales Tax /VAT etc.</li>
+                                                    <li>Benefits of above Acts, Rules and Regulations related to Agriculture Inputs to farmers and for the traders.</li>
+                                                    <li>Major flagship programs of Central/State Governments related to agricultural development. Title, Purpose /objectives components, which are eligible beneficiaries and benefits.
+                                                    </li>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui-card shadow-md ui-accordion">
+                                        <h6 class="toggle" data-toggle="accordion-four" data-toggle_screen="4" data-toggle_slider="device-slider-1">
+                                            <span class="icon icon-arrow-right"></span> Practical &amp; Viva (DA-024)
+                                        </h6>
+                                        <div class="body" data-accord="accordion-four">
+                                            <div class="row">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section bg-light pb-6" id="fee">
+        <div class="container">
+            <div class="section-heading center">
+                <h2 class="heading red-text">FEE STRUCTURE</h2>
+            </div>
+            <!-- <div class="row text-center">
+                <div class="col-md-12 pb-5">
+                    <table cellpadding="12" class="table table-bordered" style="border: 1px solid #ffffff52;;width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td class="third-row strongtext">REGISTRATION FEE</td>
+                                <td class="second-row-s-col"><i class="fa fa-inr"></i> 1000.00 </td>
+                            </tr>
+                            <tr>
+                                <td class="third-row strongtext">TUTION FEE SEM 1 & IT SUPPORT CHARGES</td>
+                                <td class="second-row-s-col"><i class="fa fa-inr"></i> 20000.00 (15000+5000)</td>
+                            </tr>
+                            <tr>
+                                <td class="third-row strongtext">TUTION FEE SEM 2 & IT SUPPORT CHARGES</td>
+                                <td class="second-row-s-col"><i class="fa fa-inr"></i> 20000.00 (15000+5000)</td>
+                            </tr>
+                            <tr>
+                                <td class="third-row strongtext">TUTION FEE SEM 3</td>
+                                <td class="second-row-s-col"><i class="fa fa-inr"></i> 15000.00</td>
+                            </tr>
+                            <tr>
+                                <td class="third-row strongtext">EXAM FEE (2000x2)</td>
+                                <td class="second-row-s-col"><i class="fa fa-inr"></i> 4000.00</td>
+                            </tr>
+                            <tr>
+                                <td class="third-row strongtext">TOTAL FEE</td>
+                                <td class="second-row-s-col"><i class="fa fa-inr"></i> 60000.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> -->
+
+            <div class="row" style="padding:0 15px;">
+                <div class="col-md-12 bank_note text-left">
+                    <div class="w-100 p-4">
+                        <ul class="mb-0 pl-2">
+                            <li class="mb-2">Total Fee of (Diploma in Agriculture Science is <i class="fa fa-inr"></i>27000/-</li>
+                            <li class="mb-2">Fee can be paid maximum in two installments before the start of each semester.</li>
+                            <li class="mb-2">If total fee of both semester is paid at the time of admission then payable amount will be <i class="fa fa-inr"></i>26000/-</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-12 pt-3">
+                    <h5>Note *</h5>
+                    <h6><small>1. Kindly note that fee paid once will not be refundable in any case.</small></h6>
+                    <h6><small>2. For Diploma Certificate University will charge Rs. 1000/- Fee apart from course fee.</small></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="section-heading center">
+                <h2 class="heading">Apply Now</h2>
+                <p class="paragraph">Diploma In Agriculture</p>
+            </div>
+            <div class="actions text-center">
+                <a href="#" class="btn btn btn-primary">Apply Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide_text py-2" style="background-color: #ff584b;">
+        <marquee behavior="scroll" direction="left" scrollamount="80" scrolldelay="1000" style="font-size: 18px; color: #000;">
+            <a style="color:#fff;" href="tel:9540939696"><b>Please give a missed call at 9540939696</b></a>
+        </marquee>
+    </div>
+    <footer class="ui-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <p class="text-center text-white">
+                            &copy; 2021 SHRI VENKATESHWARA UNIVERSITY. All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <!-- basic modal -->
+    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <center>
+                    <img src="images/thank-you.png" style="width: 150px;">
+                </center>
+                <div class="modal-body">
+                    <p>Thank you for showing interest in Diploma in Agriculture Community. One of our counsellors will reach out to you shortly. Your prospectus will be automatically downloaded in a moment.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.sliderPro.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/applify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var a = "";
+            var res = "";
+
+            $('#state').on('change', function() {
+                var stateID = $(this).val();
+                if (stateID) {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'ajax_district.php',
+                        data: 'state_id=' + stateID,
+                        success: function(html) {
+                            $('#district').html(html);
+                        }
+                    });
+                } else {
+                    $('#district').html('<option value="">Select district first</option>');
+                }
+            });
+
+            if (a == "Error") {
+                $("#apiemailMsg").show();
+                setTimeout(function() {
+                    $('#apiemailMsg').html('Incorrect SVU ID or Password');
+                    $('#apiemailMsg').css('color', 'red');
+                    $('#apiemailMsg').fadeOut(5000);
+                });
+            }
+            if (res == "success") {
+                $("#apiemailMsg").show();
+                setTimeout(function() {
+                    $('#apiemailMsg').html('We’ve sent your credentials on your email id.');
+                    $('#apiemailMsg').css('color', 'red');
+                    $('#apiemailMsg').fadeOut(10000);
+                });
+            }
+            if (res == "err") {
+                $("#apiemailMsg").show();
+                setTimeout(function() {
+                    $('#apiemailMsg').html('Incorrect Email Id');
+                    $('#apiemailMsg').css('color', 'red');
+                    $('#apiemailMsg').fadeOut(10000);
+                });
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var checknumber = 0;
+
+        function getallstate() {
+            $.ajax({
+                type: 'GET',
+                url: 'state.php',
+                success: function(html) {
+                    $('#state').html(html);
+                }
+            });
+            $.ajax({
+                type: 'GET',
+                url: 'selectedstate.php',
+                success: function(html) {
+                    $('#district').html(html);
+
+                }
+            });
+            $.ajax({
+                type: 'GET',
+                url: 'course.php',
+                dataType: 'json',
+                async: false,
+                success: function(data) {
+                    var coursekey = data.coursekey;
+                    var coursevaluename = data.coursevaluename;
+                    $('#coursecodes').val(coursevaluename);
+                    $('#coursecodeskey').val(coursekey);
+                    $.ajax({
+                        type: 'GET',
+                        url: 'subcourse.php',
+                        data: 'course=' + coursekey,
+                        success: function(data) {
+                            var subcourse = data;
+                            var subcoursekey = subcourse.substr(subcourse.indexOf("/") + 1);
+                            var subcoursevalue = subcourse.substr(0, subcourse.indexOf("/"));
+                            $('#subcoursecodes').val(subcoursevalue);
+                            $('#subcoursecodeskey').val(subcoursekey);
+                        }
+                    });
+                }
+            });
+        }
+
+        function Callajax(val) {
+
+            var status = 1;
+            $.ajax({
+                type: 'POST',
+                url: "api.php",
+                data: {
+                    'email': val,
+                    "key": '8d856929-82fe-4fb7-b9ff-b32105036ce3',
+                    'status': status
+                },
+                dataType: "html",
+                success: function(data) {
+                    var obj = JSON.parse(data)
+                    if (obj.status == "0") {
+                        checknumber = 1;
+                        $('#apiemailMsg').html(obj.message);
+                        $('#errormsgforvalidationemail').val(0);
+                        $('#checkdata').attr('disabled', true);
+                    } else if (obj.status == "200") {
+                        $('#apiemailMsg').html('');
+                        $('#errormsgforvalidationemail').val(1);
+                        $('#checkdata').attr('disabled', false);
+                        checknumber = 0;
+
+                    }
+                }
+            });
+
+        }
+
+        function Callajaxphone(val) {
+            if (val.toString().length == 10) {
+                var numbers = /^\d{10}$/;
+                if (val.match(numbers)) {
+                    var status = 2;
+                    $.ajax({
+                        type: 'POST',
+                        url: "api.php",
+                        data: {
+                            'phone': val,
+                            "key": "8d856929-82fe-4fb7-b9ff-b32105036ce3",
+                            'status': status
+                        },
+                        dataType: "html",
+                        success: function(data) {
+                            var obj = JSON.parse(data)
+                            console.log(obj)
+                            if (obj.status == "0") {
+                                checknumber = 1;
+                                $('#emailMsg').html(obj.message);
+                                $('#errormsgforvalidation').val(0);
+                                $('#checkdata').attr('disabled', true);
+                            } else if (obj.status == "200") {
+                                $('#emailMsg').html('');
+                                $('#errormsgforvalidation').val(1);
+                                $('#checkdata').attr('disabled', false);
+                                checknumber = 0;
+                            }
+                        }
+                    });
+                } else {
+                    var number = /^[0-9]+$/;
+                    if (!val.match(number)) {
+                        $("#rfvMobileNo").show();
+                        setTimeout(function() {
+                            $('#rfvMobileNo').css('display', 'block');
+                            $('#rfvMobileNo').css('color', 'red');
+                            $('#rfvMobileNo').fadeOut(5000);
+                        });
+                    } else {
+                        $("#rfvMobileNo1").show();
+                        setTimeout(function() {
+                            $('#rfvMobileNo1').css('display', 'block');
+                            $('#rfvMobileNo1').css('color', 'red');
+                            $('#rfvMobileNo1').fadeOut(5000);
+                        });
+                    }
+                }
+            } else {
+                $('#checkdata').attr('disabled', true);
+                $("#phone_errorloc").show();
+                setTimeout(function() {
+                    $('#phone_errorloc').fadeOut(5000);
+                });
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        $(window).on('load', function() {
+            var a = "";
+            if (a == 201) {
+                var name = "";
+                var email = "";
+                var phone = "";
+                var state = "";
+                var district = "";
+                var cmsed_id = "";
+                var course_code = "";
+                var sub_coursecode = "";
+                var institute = "";
+                var rmid = "";
+                var step = 1;
+                var sendmail = "";
+                $('#loader').show();
+                $.ajax({
+                    type: 'POST',
+                    url: "https://cmsed.svu.edu.in/cmsed/Applicationform/registration",
+                    data: {
+                        name: name,
+                        email: email,
+                        phone: phone,
+                        state: state,
+                        district: district,
+                        studentid: cmsed_id,
+                        sub_coursecode: sub_coursecode,
+                        course_code: course_code,
+                        step: step,
+                        sendmail: sendmail,
+                        institute: institute,
+                        rmid: rmid
+                    },
+                    success: function(data) {
+                        window.location.href = 'https://cmsed.svu.edu.in/cmsed/Applicationform/index';
+                    }
+
+                });
+            } else {
+                if (a == 400) {
+                    $("#apiemailMsg").show();
+                    setTimeout(function() {
+                        $('#apiemailMsg').html('This email id or phone number is already exist');
+                        $('#apiemailMsg').css('color', 'red');
+                        $('#apiemailMsg').fadeOut(5000);
+                    })
+                }
+            }
+
+        });
+    </script>
+    <script type="text/javascript">
+        function loginstudent() {
+            var a = "";
+            var checkstudent = "";
+            if (checkstudent) {
+                if (a == 200) {
+                    var name = "";
+                    var email = "";
+                    var phone = "";
+                    var altnumber = "";
+                    var course = "";
+                    var institute = "";
+                    var specialization = "";
+                    var dob = "";
+                    var cmsed_id = "";
+                    var course_code = "";
+                    var sub_coursecode = "";
+                    var state = "";
+                    var district = "";
+                    var father_name = "";
+                    var mother_name = "";
+                    var category = "";
+                    var gender = "";
+                    var aadhar = "";
+                    var step = "";
+                    var rmid = "";
+                    var admsessions = "";
+                    var admtypes = "";
+                    var selectyear = "";
+                    $('#loader').show();
+                    $.ajax({
+
+                        type: 'POST',
+
+                        url: "https://cmsed.svu.edu.in/cmsed/Applicationform/registration/",
+                        data: {
+                            name: name,
+                            email: email,
+                            phone: phone,
+                            state: state,
+                            district: district,
+                            studentid: cmsed_id,
+                            sub_coursecode: sub_coursecode,
+                            course_code: course_code,
+                            altnumber: altnumber,
+                            course: course,
+                            institute: institute,
+                            specialization: specialization,
+                            dob: dob,
+                            father_name: father_name,
+                            mother_name: mother_name,
+                            category: category,
+                            gender: gender,
+                            aadhar: aadhar,
+                            step: step,
+                            rmid: rmid,
+                            admsessions: admsessions,
+                            admtypes: admtypes,
+                            selectyear: selectyear
+                        },
+                        success: function(data) {
+                            window.location.href = 'https://cmsed.svu.edu.in/cmsed/Applicationform/index';
+                        }
+
+                    });
+                }
+            }
+        }
+    </script>
+
+    <script>
+        $('.device-slider').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: false,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        })
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script type="text/javascript">
+        function hideerr() {
+            setTimeout(function() {
+                $('.errormsg').hide();
+            }, 3000);
+        }
+
+        function ValidationEvent() {
+            var name = $('#name').val();
+            var email = $('#email').val();
+            var phone = $('#phone').val();
+            var state = $('#state').val();
+            var empcode = $('#empcode').val();
+
+            // email filter
+            var filter = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+            $('.errormsg').hide();
+
+            if ($('#name').val() == '') {
+                $('#name_errorloc').show();
+                hideerr();
+                return false;
+            } else if ($('#email').val() == '') {
+                $('#email_errorloc').show();
+                hideerr();
+                return false;
+            } else if (!(filter.test($('#email').val()))) {
+                $('#email_errorloc').show();
+                hideerr();
+                return false;
+            } else if ($('#phone').val() == '') {
+                $('#phone_errorloc').show();
+                hideerr();
+                return false;
+            } else if ($('#phone').val().length != 10) {
+                $('#phone_errorloc').show();
+                hideerr();
+                return false;
+            } else if ($('#course').val() == '') {
+                $('#course_errorloc').show();
+                hideerr();
+                return false;
+            }
+
+
+
+            var ss = {
+                'name': name,
+                'email': email,
+                'phone': phone,
+                'state': state,
+                'empcode': empcode
+            };
+            jQuery.ajax({
+                url: "/email_managment/mailcontact.php",
+                type: "POST",
+                dataType: 'json',
+                data: JSON.stringify(ss),
+                beforeSend: function(ab) {
+                    $("#submit").text("");
+                    $("#submit").append("<img src='https://mbachandigarh.collegevidya.in/img/btn-loader.gif'/>");
+                },
+                success: function(a) {
+                    if (a == 1) {
+                        $("#submit").text("SUBMIT");
+                        $("#submit").remove();
+                        $("#btn-msg").html("<h5> Thank you for sharing the details!</h5>");
+                        window.location = "/thanku.html"
+                        $("#submit").text(" SUBMIT");
+                        // $("#query-form")[0].reset();
+                    }
+                }
+            })
+
+
+        }
+    </script>
+    <script type="text/javascript">
+        function ValidateEmail(val) {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (!val.match(mailformat)) {
+                $("#rfvEmailId1").show();
+                setTimeout(function() {
+                    $('#rfvEmailId1').css('display', 'block');
+                    $('#rfvEmailId1').css('color', 'red');
+                    $('#rfvEmailId1').fadeOut(10000);
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>

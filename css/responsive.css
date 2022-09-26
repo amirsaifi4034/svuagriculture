@@ -1,0 +1,58 @@
+@media only screen and (max-width: 768px) {
+    .comp_detail_bar li {
+        width: 25%;
+    }
+    .comp_detail_bar li:nth-child(4),
+    .comp_detail_bar li:nth-child(5) {
+        display: none;
+    }
+    .side-panel {
+        padding: 15px 5px;
+    }
+    .side-panel span {
+        font-size: 11px;
+    }
+    .right_side .menu-item {
+        font-size: 14px;
+    }
+    span.pros_sec {
+        width: 50%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    p.sub_text,
+    .comp_detail_bar li:nth-child(2) {
+        display: none;
+    }
+    .comp_detail_bar li {
+        width: 33.3%;
+        font-size: 12px;
+    }
+    .mobileView {
+        margin-top: -15px;
+    }
+    .mobileView p {
+        font-size: 10px !important;
+    }
+    .pros_cons_bar {
+        bottom: -20px !important;
+        width: 95% !important;
+        font-size: 11px !important;
+        padding: 1px 12px !important;
+    }
+    p.m-0.sub_text_other.loan-desk,
+    i.fa.fa-square-o {
+        display: none;
+    }
+    .logo {
+        width: 80px;
+    }
+    .button_heade button {
+        padding: 2px 5px;
+        font-size: 12px;
+    }
+}
