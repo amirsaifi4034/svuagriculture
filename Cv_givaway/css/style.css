@@ -1,0 +1,113 @@
+a {
+    text-decoration: none;
+}
+
+img.logo_img {
+    width: 120px;
+}
+
+#wing1 {
+    transform-origin: center;
+    animation: flap 0.4s ease-out infinite alternate;
+}
+
+#wing2 {
+    transform-origin: center;
+    animation: flap 0.4s ease-in infinite alternate;
+}
+
+@keyframes flap {
+    50% {
+        transform: scaleX(-1) rotate(-45deg) translate(-40px, -40px);
+    }
+}
+
+.content_header a {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    left: 90%;
+    color: #0054ce;
+}
+
+.steps .form {
+    width: 80%;
+    padding: 30px 45px;
+    background: #fff;
+    margin: 30px auto 15px;
+    border-radius: 12px;
+    box-shadow: 0px 9px 11px #0000000d;
+    border: 1px solid #eee;
+}
+
+.steps {
+    display: none;
+}
+
+.questionBox {
+    background: #fff;
+    margin-top: 37px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0px 9px 11px #0000000d;
+}
+
+.form-label {
+    font-size: 14px;
+    display: none;
+}
+
+.invalid {
+    background-color: #ff00001c;
+}
+
+
+/* =================== */
+
+.progress-main {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.progress-main .progressbar {
+    display: flex;
+    width: 23px;
+    border-radius: 50%;
+    height: 23px;
+    border: 1px solid #06a864;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    background: #fff;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+    color: #06a864;
+    font-weight: 600;
+}
+
+.progress-main .progressbar.full {
+    background-color: #06a864a8;
+    color: #fff;
+}
+
+.progress-main .progressbar_connect {
+    display: block;
+    width: 5%;
+    height: 2px;
+    background-color: #06a864a8;
+}
+
+input[type="radio"],
+label {
+    cursor: pointer;
+}
+
+.active {
+    background-color: #06a864 !important;
+    color: #fff !important;
+}
