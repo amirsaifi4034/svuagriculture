@@ -19798,6 +19798,15 @@ body.coming-soon .ui-counter>div .label {
     -webkit-animation: move 20s linear infinite;
 }
 
+span.rightArrow {
+    width: 27px;
+    display: inline-block;
+}
+
+h6.toggle.arrowbuttons {
+    display: flex;
+    align-items: center;
+}
 
 /* Create the animation */
 
